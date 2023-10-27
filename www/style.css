@@ -1,0 +1,115 @@
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+h1{
+/*
+  background: linear-gradient(to right, #6A1F7A, #D6001C);
+*/
+  font-size:50px;
+  text-align: center;
+  color:white;
+  margin:0px;
+  padding:20px:
+
+
+}
+
+.head-container {
+  background: linear-gradient(to right, #6A1F7A, #D6001C);
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+
+ #images {
+  align:left;
+  height:55px;
+  width:50px;
+  padding:5px;
+  margin-right :12px;
+  }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  margin-top:9.5px;
+  margin-bottom:0px;
+}
+
+.left-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  max-width:110px;
+  background-color:white;
+    max-height: 100%; /* Set a maximum height relative to its parent */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+    flex-grow: 1;
+}
+
+
+
+.center-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 5px;
+  flex: 1;
+  text-align: center;
+  margin-bottom: 110px;
+
+}
+
+.right-pane {
+  padding: 20px;
+  max-width:30%;
+  max-height:50%;
+}
+
+#uploadLabel {
+  display: inline-block;
+  width: 220px;
+  height: 50px;
+  background: linear-gradient(to right, #6A1F7A, #D6001C);
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#imageInput {
+  display: none;
+}
+
+.filterButton {
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(to right, #6A1F7A, #D6001C);  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top:10px;
+  font-style:oblique;
+  font-size: 13px;
+  color:white;
+  padding:5px;
+}
+
+#imageFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  }

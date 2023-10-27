@@ -1,0 +1,19 @@
+{
+  "name": "image-manipulator",
+  "collaborators": [
+    "sheshu2906 <sheshnath.yadav@knoldus.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "image_manipulator_bg.wasm",
+    "image_manipulator.js",
+    "image_manipulator_bg.js",
+    "image_manipulator.d.ts"
+  ],
+  "module": "image_manipulator.js",
+  "types": "image_manipulator.d.ts",
+  "sideEffects": [
+    "./image_manipulator.js",
+    "./snippets/*"
+  ]
+}

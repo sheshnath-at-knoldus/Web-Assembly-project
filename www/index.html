@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Web Assembly </title>
+  <div class = "head-container">
+    <img src = "resources/NashTechLogo.jpg"  id = "images" > <h1> Web Assembly Demo </h1>
+  </div>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="left-pane">
+    <div id="imageFilters">
+      <button id="greenButton" class="filterButton">Green</button>
+      <button id="redButton" class="filterButton">Red</button>
+      <button id="blueButton" class="filterButton">Blue</button>
+      <button id="grayscaleButton" class="filterButton" >Grayscale</button>
+      <button id="flip horizontal Button" class="filterButton" >Flip Horizontal</button>
+      <button id="flip vertical Button" class="filterButton" >Flip Vertical</button>
+      <button id="blur Button" class="filterButton" >Blur</button>
+      <button id="oceanic Button" class="filterButton" >Oceanic</button>
+      <button id="golden Button" class="filterButton" >Golden</button>
+      <button id="seagreen Button" class="filterButton" >Sea Green</button>
+      <button id="vintage Button" class="filterButton" >Vintage</button>
+      <button id="bluechrome Button" class="filterButton" >Blue Chrome</button>
+      <button id="pastelpink Button" class="filterButton" >Pastel Pink</button>
+      <button id="lofi Button" class="filterButton" >Lofi</button>
+      <button id="obsidian Button" class="filterButton" >Obsidian</button>
+      <button id="firenze Button" class="filterButton" >Firenze</button>
+
+      <button id="draw text border Button" class="filterButton" >Border Text</button>
+
+      <button id="dramatic Button" class="filterButton" >Dramatic</button>
+      <button id="perfume Button" class="filterButton" >Perfume</button>
+      <button id="twenties Button" class="filterButton" >Twenties</button>
+      <button id="liquid Button" class="filterButton" >Liquid</button>
+
+
+
+
+
+      <button id="draw text Button" class="filterButton" >Draw Text</button>
+      <button id="sharp_image Button" class="filterButton" >Sharpen</button>
+      <button id="detect_horizontal Button" class="filterButton" >Detect Horizontal Line</button>
+      <button id="increase Button" class="filterButton" >Increase Brightness</button>
+      <button id="Crop Button" class="filterButton" >Crop</button>
+      <button id="Resize Button" class="filterButton" >Resize</button>
+      <button id="Compress Button" class="filterButton" >Compress</button>
+      <button id="resetButton" class="filterButton">Reset</button>
+
+
+    </div>
+  </div>
+
+
+  <div class="center-pane">
+
+
+
+    <label for="imageInput" id="uploadLabel">Upload Image</label>
+    <input type="file" id="imageInput" accept="image/*" title="Browse Image" width="200">
+    <img id="outputImage" width="800" height="500" >
+  </div>
+
+  <div class="right-pane">
+    <img id="outputImage2">
+    <br>
+    <a id="downloadButton" download="resized_image.png">Download Image</a>
+  </div>
+
+</div>
+
+
+<noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
+<script src="./bootstrap.js"></script>
+</body>
+</html>
