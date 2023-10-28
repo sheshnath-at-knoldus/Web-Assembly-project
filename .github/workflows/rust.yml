@@ -17,12 +17,15 @@ jobs:
         run: cargo build
       - name: Install wasm-pack
         run: 'curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh'
+        
       - name: Build WebAssembly
         run: wasm-pack build
-        working-directory: ./Web-Assembly-project
+        working-directory: ./
+        
       - name: Test
         run: wasm-pack test --chrome --headless
         working-directory: ./Web-Assembly-project
+        
       - name: Archive WebAssembly artifacts
         uses: actions/upload-artifact@v2
         with:
