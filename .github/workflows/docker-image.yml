@@ -1,0 +1,24 @@
+name: Run Docker Container
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch
+
+jobs:
+  run-docker-container:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker
+      uses: actions/setup-docker@v2
+      with:
+        dockerfile: ./Dockerfile  # Specify the path to your Dockerfile
+
+    - name: Build and run Docker container
+      run: |
+        docker build -t your-image-name .
+        docker run your-image-name
