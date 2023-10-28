@@ -3,7 +3,7 @@ name: Run Docker Container
 on:
   push:
     branches:
-      - main  # Change this to your main branch
+      - master  # Change this to your main branch
 
 jobs:
   run-docker-container:
