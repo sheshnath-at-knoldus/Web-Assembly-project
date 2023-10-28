@@ -24,10 +24,10 @@ jobs:
         
       - name: Test
         run: wasm-pack test --chrome --headless
-        working-directory: ./Web-Assembly-project
+        working-directory: ./
         
       - name: Archive WebAssembly artifacts
         uses: actions/upload-artifact@v2
         with:
           name: wasm-artifacts
-          path: ./Web-Assembly-project/pkg
+          path: ./pkg
