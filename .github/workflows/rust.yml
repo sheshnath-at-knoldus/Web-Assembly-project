@@ -1,38 +1,28 @@
 name: WebAssembly CI/CD
-
-on:
+'on':
   push:
     branches:
-      - master  # Change this to your main branch
-
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Setup Rust
-      uses: actions/setup-rust@v1
-      with:
-        rust-version: stable
-
-    - name: Install wasm-pack
-      run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
-
-    - name: Build WebAssembly
-      run: wasm-pack build
-      working-directory: ./Web-Assembly-project  # Change this to your project's directory
-
-    - name: Test
-      run: wasm-pack test --chrome --headless
-      working-directory: ./Web-Assembly-project  # Change this to your project's directory
-
-    - name: Archive WebAssembly artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: wasm-artifacts
-        path: ./Web-Assembly-project/pkg
-
- 
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Rust
+        uses: actions/setup-rust@v1
+        with:
+          rust-version: stable
+      - name: Install wasm-pack
+        run: 'curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh'
+      - name: Build WebAssembly
+        run: wasm-pack build
+        working-directory: ./Web-Assembly-project
+      - name: Test
+        run: wasm-pack test --chrome --headless
+        working-directory: ./Web-Assembly-project
+      - name: Archive WebAssembly artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: wasm-artifacts
+          path: ./Web-Assembly-project/pkg
