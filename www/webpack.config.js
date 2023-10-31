@@ -14,6 +14,6 @@ module.exports = {
   devServer: {
     host: '0.0.0.0',
     port: 3000,
-    // Additional devServer configuration options can be added here if needed.
+    // Additional devServer configuration options can be added if needed.
   },
 };
