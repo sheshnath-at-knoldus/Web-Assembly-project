@@ -34,7 +34,7 @@ WORKDIR /app/www
 RUN npm install
 
 # Expose the port your Node.js app will run on
-# EXPOSE 3000
+ EXPOSE 8080
 
 # Run npm start
 CMD ["npm", "start"]
