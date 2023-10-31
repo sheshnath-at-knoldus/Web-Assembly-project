@@ -1,8 +1,7 @@
-name: WebAssembly CI/CD for GCP
+name: WebAssembly CI/CD GCP
 'on':
   push:
     branches:
-      - main
       - master
 jobs:
   build:
@@ -10,18 +9,23 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Set up Rust
-        uses: actions/setup-rust@v1
-        with:
-          rust-version: nightly
+      - name: Install Rustup
+        run: rustup default nightly
+      - name: Configure Rust environment
+        run: source $HOME/.cargo/env
+      - name: Build your Rust project
+        run: cargo build
       - name: Install wasm-pack
         run: 'curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh'
+        
       - name: Build WebAssembly
         run: wasm-pack build
         working-directory: ./
+        
       - name: Test
         run: wasm-pack test --chrome --headless
         working-directory: ./
+        
       - name: Archive WebAssembly artifacts
         uses: actions/upload-artifact@v2
         with:
