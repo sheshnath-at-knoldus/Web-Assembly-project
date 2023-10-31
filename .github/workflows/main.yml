@@ -40,9 +40,17 @@ jobs:
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v0
         with:
-          version: 345.0.0
+          version: 366.0.0
           service_account_key: '${{ secrets.SECRET_KEY }}'
           project_id: teak-ellipse-403407
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+           node-version: '14'  # Use the Node.js version you prefer
+
+
+          
       - name: Deploy to GCP
         run: >
           gcloud app deploy --version=1 ./pkg  # Replace with the correct path
