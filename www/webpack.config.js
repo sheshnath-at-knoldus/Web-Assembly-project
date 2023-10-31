@@ -11,9 +11,9 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin(['index.html'])
   ],
-  // devServer: {
-  //   host: '0.0.0.0',
-  //   port: 3000,
-  //   // Additional devServer configuration options can be added if needed.
-  // },
+  devServer: {
+    host: '0.0.0.0',
+    port: 8080,
+    // Additional devServer configuration options can be added if needed.
+  },
 };
