@@ -1,0 +1,47 @@
+name: WebAssembly CI/CD for GCP
+'on':
+  push:
+    branches:
+      - main
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Rust
+        uses: actions/setup-rust@v1
+        with:
+          rust-version: nightly
+      - name: Install wasm-pack
+        run: 'curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh'
+      - name: Build WebAssembly
+        run: wasm-pack build
+        working-directory: ./
+      - name: Test
+        run: wasm-pack test --chrome --headless
+        working-directory: ./
+      - name: Archive WebAssembly artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: wasm-artifacts
+          path: ./pkg
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          version: 345.0.0
+          service_account_key: '${{ secrets.SECRET_KEY }}'
+          project_id: teak-ellipse-403407
+      - name: Deploy to GCP
+        run: >
+          gcloud app deploy --version=1 ./pkg  # Replace with the correct path
+          to your WebAssembly artifacts
+        env:
+          GCLOUD_PROJECT: '${{ secrets.SECRET_KEY }}'
