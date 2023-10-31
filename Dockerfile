@@ -26,7 +26,7 @@ RUN apt-get install -y nodejs npm
 COPY . .
 
 ## Run the Rust project
-#RUN  wasm-pack build
+# RUN  wasm-pack build
 
 
 # Navigate to the www folder and install npm dependencies
@@ -34,7 +34,7 @@ WORKDIR /app/www
 RUN npm install
 
 # Expose the port your Node.js app will run on
-EXPOSE 8080
+# EXPOSE 3000
 
 # Run npm start
 CMD ["npm", "start"]
